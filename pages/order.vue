@@ -354,7 +354,7 @@ export default {
         let res = await this.$region.pay(formData, config);
         if (res && res.status == "success") {
           this.setPayment(res.data);
-          // this.$router.push({ path: "/payment" });
+          this.$router.push({ path: "/myorder" });
           this.setCart([]);
         }
         this.setAlert({
