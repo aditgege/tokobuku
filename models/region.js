@@ -20,6 +20,10 @@ const model = $axios => ({
 
   pay(data, config) {
     return $axios.$post('/payment', data, config)
+  },
+
+  getMyOrders() {
+    return $axios.$get('/my-order')
   }
 })
 export default ({

@@ -18,8 +18,13 @@
     <div
       class="p-4 flex space-x-4 w-full md:w-1/2 justify-between text-white mx-auto border-2 border-gray-900 bg-gray-900"
     >
-      <div>
-        <!-- <p>{{ $auth.user.name }}</p> -->
+      <div >
+        <button
+				  @click="$router.push('/myorder')"
+          class="bg-yellow-600 text-gray-900 px-3 py-2 hover:text-white cursor-pointer"
+        >
+          MY ORDER
+        </button>
         <!-- <p>{{ $auth.user }}</p> -->
       </div>
       <div>

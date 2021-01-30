@@ -186,6 +186,18 @@ export default {
   components: {
     vSelect,
   },
+  created() {
+    this.getProvinces();
+    this.getCities();
+    this.name = this.$auth.user.name;
+    this.address = this.$auth.user.address;
+    this.phone = this.$auth.user.phone;
+
+    if (this.couriers.length == 0) {
+      this.getCouriers();
+    }
+    this.setAddress()
+  },
   data() {
     return {
       name: "",
@@ -242,6 +254,16 @@ export default {
       setCart: "cart/set",
       setPayment: "setPayment",
     }),
+
+    setAddress() {
+        this.province.id = this.$auth.user.province_id;
+        let prov = this.provinces.find((e) => e.id === this.province.id);
+        this.province.province = prov == undefined ? null: prov.province; 
+        this.city.id = this.$auth.user.city_id;
+        let city = this.cities.find((e) => e.id === this.city.id);
+        this.city.city_name = city == undefined ? null: city.city_name
+        this.loading = false;
+    },
     async saveShipping() {
       let formData = new FormData();
       formData.set("name", this.name);
@@ -330,22 +352,21 @@ export default {
       };
       try {
         let res = await this.$region.pay(formData, config);
-        let { data } = res;
-        if (data && data.status == "success") {
-          this.setPayment(data.data);
+        if (res && res.status == "success") {
+          this.setPayment(res.data);
           // this.$router.push({ path: "/payment" });
           this.setCart([]);
         }
         this.setAlert({
           status: true,
-          text: data.message,
-          color: data.status,
+          text: res.message,
+          color: res.status,
         });
       } catch (error) {
         let { data } = error.response;
         this.setAlert({
           status: true,
-          text: data.message,
+          text: error.response.message,
           color: "error",
         });
       }
@@ -380,29 +401,6 @@ export default {
         console.log(error);
       }
     },
-  },
-  created() {
-    this.name = this.$auth.user.name;
-    this.address = this.$auth.user.address;
-    this.phone = this.$auth.user.phone;
-
-    if (this.provinces && this.provinces.length == 0) {
-      this.getProvinces();
-      this.getCities();
-    }
-
-    if (this.couriers.length == 0) {
-      this.getCouriers();
-    }
-    setTimeout(() => {
-      this.province.id = this.$auth.user.province_id;
-      let prov = this.provinces.find((e) => e.id === this.province.id);
-      this.province.province = prov.province;
-      this.city.id = this.$auth.user.city_id;
-      let city = this.cities.find((e) => e.id === this.city.id);
-      this.city.city_name = city.city_name;
-      this.loading = false;
-    }, 500);
   },
 };
 </script>
