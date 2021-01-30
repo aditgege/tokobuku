@@ -57,7 +57,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://tokobukuapp.herokuapp.com/api/',
+    baseURL: 'http://tokobukuapp.herokuapp.com/api/v1',
     credentials: true
   },
   auth: {
@@ -78,9 +78,9 @@ export default {
           property: 'success',
         },
         endpoints: {
-          login: { url: '/v1/login', method: 'post' },
-          logout: { url: '/v1/logout', method: 'post' },
-          user: { url: '/v1/user', method: 'get' },
+          login: { url: '/login', method: 'post' },
+          logout: { url: '/logout', method: 'post' },
+          user: { url: '/user', method: 'get' },
 
         }
       }
