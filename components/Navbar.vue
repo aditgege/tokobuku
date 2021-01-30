@@ -26,10 +26,17 @@
           <ul
             class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0"
           >
+           <li>
+              <a
+                @click="$router.push('/')"
+                class="inline-block cursor-pointer no-underline hover:text-black hover:underline py-2 px-4"
+                >Home</a
+              >
+            </li>
             <li>
               <a
                 @click="$router.push('/book')"
-                class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+                class="inline-block cursor-pointer no-underline hover:text-black hover:underline py-2 px-4"
                 >Shop</a
               >
             </li>
@@ -40,7 +47,7 @@
       <div class="order-1 md:order-2">
         <a
           @click="$router.push('/')"
-          class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl"
+          class="flex items-center cursor-pointer tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl"
         >
           <svg
             class="fill-current text-gray-800 mr-2"

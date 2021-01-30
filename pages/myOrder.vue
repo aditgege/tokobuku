@@ -1,6 +1,7 @@
 <template>
   <section class="pt-20 min-h-screen">
     <div v-if="items.length > 0" class="mb-10">
+        <h1 class=" text-center text-gray-900">MY ORDER</h1>
       <ul
         class="divide-y divide-gray-200 mb-1"
         v-for="item in items"
