@@ -1,0 +1,85 @@
+.vs__dropdown-toggle{
+    min-height: 3em;
+    padding-left: .3em;
+    padding-right: .3em;
+    border-color: #e5e5e5;
+    border-radius: .5em;
+  }
+  .vs__dropdown-menu li{
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+  .v-select{
+    background-color: white;
+    @apply border-2;
+    @apply border-gray-900
+  }
+  .vs__open-indicator{
+    fill: #949497;
+  }
+  .vs__dropdown--sm .vs__dropdown-toggle {
+    min-height: 2.5em;
+  }
+  .vs__dropdown--rounded-lg .vs__dropdown-toggle {
+    border-radius: 1em;
+  }
+  .vs__dropdown--pl-1 .vs__dropdown-toggle {
+    padding-left: .1em !important;
+  }
+  .vs__dropdown--pr-2 .vs__dropdown-toggle {
+    padding-right: .2em !important;
+  }
+  
+  @media (max-width: 767px) {
+    .vs__dropdown--border-none-sm .vs__dropdown-toggle {
+      border: none !important;
+    }
+  }
+  @media (min-width: 768px) {
+    .vs__dropdown-toggle{
+      padding-left: .75em;
+      padding-right: .75em;
+    }
+    .vs__dropdown--sm .vs__dropdown-toggle {
+      padding-left: .5em;
+      padding-right: .5em;
+    }
+  }
+  
+  .v-select.primary {
+    @apply bg-white;
+    @apply rounded;
+  }
+  .v-select.primary .vs__dropdown-toggle {
+    @apply border-none;
+    @apply py-2;
+    @apply px-4;
+  }
+  .v-select.primary .vs__selected {
+    @apply text-white;
+    @apply font-semibold;
+  }
+  
+  .v-select.primary .vs__open-indicator {
+    fill: white;
+  }
+  
+  .v-select.primary .vs__dropdown-menu {
+    @apply bg-white;
+    @apply shadow-none;
+    @apply border-none;
+    @apply rounded;
+    @apply mt-1;
+    @apply font-normal;
+  }
+  
+  .v-select.primary .vs__open-indicator {
+    fill: #FFF;
+  }
+  
+  .v-select.v-select.primary .vs__search::placeholder{
+    color: transparent
+  }
+  .v-select.primary .vs__dropdown-toggle {
+    @apply border-gray-900;
+  }
