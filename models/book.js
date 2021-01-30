@@ -1,10 +1,10 @@
 const url = process.env.base
 const model = $axios => ({
   getBooks () {
-    return $axios.$get(url + '/books')
+    return $axios.$get('/books')
   },
   getBook (slug) {
-    return $axios.$get(url + '/books/slug/' + slug)
+    return $axios.$get('/books/slug/' + slug)
   }
 })
 export default ({

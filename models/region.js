@@ -1,25 +1,25 @@
 const url = process.env.base
 const model = $axios => ({
   getCouriers () {
-    return $axios.$get(url + '/couriers')
+    return $axios.$get('/couriers')
   },
   getCities () {
-    return $axios.$get(url + '/cities')
+    return $axios.$get('/cities')
   },
   getProvinces () {
-    return $axios.$get(url + '/provinces')
+    return $axios.$get('/provinces')
   },
 
   getServices (data, config) {
-    return $axios.$post(url + '/services', data, config)
+    return $axios.$post('/services', data, config)
   },
 
   saveShipping(data, config) {
-    return $axios.$post(url + '/shipping', data, config)
+    return $axios.$post('/shipping', data, config)
   },
 
   pay(data, config) {
-    return $axios.$post(url + '/payment', data, config)
+    return $axios.$post('/payment', data, config)
   }
 })
 export default ({
